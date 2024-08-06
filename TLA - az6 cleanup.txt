@@ -1,0 +1,90 @@
+az6 - TLA Cleanup
+
+https://github.com/WoolworthsCORP/tenancy-instances/blob/main/soi/applications/az6.json
+
+
+TLA - az6
+
+stacks - default
+
+Determine if kubernetes/mcp enabled stack -->NO
+
+application services  ---> az6-dev-azure
+
+Terrform workpace for app services ---> tenancy-app-az6-services-az6-dev-azure
+
+IAC Stacks ---> iac-az6-dev-azure
+
+
+===============================================
+
+Step 1 : Open this from workspace --> tenancy-app-az6-services-az6-dev-azure and click status --> Click last run --> click download the file.
+
+---> Search for " Mode" check for 'Data" for type.( it is safe), Secret value can be ignored..
+
+
+Step 2 : Run the Queue Destroy plan --> tenancy-app-az6-services-az6-dev-azure ( Double check resources are 0) once approved below both steps.
+
+
+Step 3 : https://app.terraform.io/app/WoolworthsCORP/workspaces/tenancy-app-az6-services-az6-dev-azure/runs/run-C9GiFKZeYKRipXYu
+
+Ping in the TLA Chat group ( Example)
+Need an override on this Sr: RITM2165891
+TLA: az6
+Type - Non MCP
+IAC Resource - 0
+
+Step 4 : On the GitHub delete entry inside the  "application_services": {}, --> https://github.com/WoolworthsCORP/tenancy-instances/blob/az6-cleanup/soi/applications/az6.json
+
+Ping in the TLA Chat group ( Example)
+
+TLA: az6 SR # RITM2165891
+https://github.com/WoolworthsCORP/tenancy-instances/pull/1248
+
+Kindly approve this PR
+
+
+
+
+
+
+
+===========================================
+
+
+PS D:\GIT\tenancy-instances> git branch
+* main
+PS D:\GIT\tenancy-instances> git checkout -b "az6-cleanup" ---> Creating new branch
+Switched to a new branch 'az6-cleanup'
+PS D:\GIT\tenancy-instances> git branch  ---> Check which branch we are present and edit the code & save ( Ctrl+s). ( Refer * )
+* az6-cleanup ---> *** Point to which branch we are present.
+  main
+PS D:\GIT\tenancy-instances> git add . ---> add the changes to branch
+PS D:\GIT\tenancy-instances> git commit -m "az6-tla-cleanup"  --? commit the change
+[az6-cleanup 08be36c] az6-tla-cleanup
+ 1 file changed, 1 insertion(+), 18 deletions(-)
+PS D:\GIT\tenancy-instances> git push 
+fatal: The current branch az6-cleanup has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin az6-cleanup
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS D:\GIT\tenancy-instances> git push --set-upstream origin az6-cleanup
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 449 bytes | 449.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+remote:
+remote: Create a pull request for 'az6-cleanup' on GitHub by visiting:
+remote:      https://github.com/WoolworthsCORP/tenancy-instances/pull/new/az6-cleanup
+remote:
+To https://github.com/WoolworthsCORP/tenancy-instances
+ * [new branch]      az6-cleanup -> az6-cleanup
+branch 'az6-cleanup' set up to track 'origin/az6-cleanup'.
+PS D:\GIT\tenancy-instances> 
